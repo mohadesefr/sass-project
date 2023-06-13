@@ -1,0 +1,194 @@
+.main-section2 {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $light-bg;
+  position: relative;
+  z-index: 0;
+
+  .section2-container {
+    @include parent_width;
+    @include row($justify: space-between);
+    position: relative;
+    padding-top: 16vh;
+    gap: 5%;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      .main-section2-img,
+      .main-section2-text {
+        width: 100%;
+      }
+    }
+    .main-section2-img {
+      display: block;
+      width: 45%;
+      object-fit: contain;
+      padding-left: 15px;
+      padding-right: 15px;
+      img {
+        width: 100%;
+        max-height: 100%;
+      }
+      @media (max-width: 768px) {
+        margin-bottom: $spacer * 2;
+        max-width: 40vw;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    .main-section2-text {
+      display: block;
+      padding-left: 15px;
+      padding-right: 15px;
+      width: 45%;
+      @media (max-width: 768px) {
+        max-width: 70vw;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      h2 {
+        margin-bottom: $spacer * 5;
+        @media (max-width: 768px) {
+          margin-bottom: $spacer * 2;
+        }
+      }
+    }
+    .p1 {
+      margin-bottom: $spacer * 3;
+    }
+    .p2 {
+      margin-bottom: $spacer * 5;
+    }
+
+    p {
+      line-height: 1.8;
+      font-weight: 400;
+      font-size: 18px;
+      @media (max-width: 768px) {
+        font-size: $spacer;
+      }
+    }
+    .button-primary {
+      @include button($hover-background: $secondary-color);
+      padding: $spacer * 3 $spacer * 5;
+      line-height: 1;
+      @media (max-width: 768px) {
+        padding: $spacer $spacer * 2;
+        font-size: $spacer;
+      }
+    }
+  }
+  .section2-talent {
+    @include parent_width;
+    text-transform: uppercase;
+    font-size: 18vw;
+    font-weight: 800;
+    color: $text-link-color;
+    text-align: center;
+    -webkit-text-stroke-width: 22px;
+    position: relative;
+    bottom: -6vw;
+    left: 0;
+    right: 0;
+    @media (max-width: 768px) {
+      -webkit-text-stroke-width: 5px;
+    }
+  }
+}
+
+.main-section3 {
+  @include parent_width;
+  padding-top: $spacer * 15;
+  padding-bottom: $spacer * 12;
+
+  .main-section3-text {
+    @include column($align: center);
+    max-width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: $spacer * 9;
+    text-align: center;
+
+    h2 {
+      margin-bottom: $spacer * 3;
+    }
+    p {
+      @media (max-width: 768px) {
+        font-size: $spacer;
+      }
+    }
+  }
+
+  .browse-box-section3 {
+    .browse-row {
+      @include row($justify: space-between);
+
+      article {
+        @include column;
+        width: calc(33.33% - 43px);
+        padding: $spacer * 4 $spacer * 3 $spacer * 3;
+        @media (max-width: 768px) {
+          width: calc(50% - 43px);
+        }
+
+        @media (max-width: 320px) {
+          width: 100%;
+        }
+
+        .browse-box-icon {
+          @include icon-box;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: $spacer * 4;
+        }
+        .browse-box-title {
+          display: block;
+          color: #00044a;
+          margin-bottom: $spacer * 2;
+          font-weight: 700;
+          font-size: $spacer * 3;
+          &:hover {
+            color: $primary_color;
+          }
+
+          @media (max-width: 768px) {
+            font-size: $spacer * 2;
+          }
+        }
+        p {
+          font-size: $spacer * 2;
+          margin-bottom: $spacer * 2;
+          // line-height: 30px;
+          @media (max-width: 768px) {
+            font-size: $spacer;
+          }
+        }
+
+        .browse-box-title2 {
+          color: $primary_color;
+          font-weight: 700;
+          margin-bottom: $spacer * 4;
+          transition: all 0.4s ease-out;
+          border-radius: $spacer;
+          padding: $spacer $spacer * 4;
+          transform: translateX(-29px);
+          @media (max-width: 768px) {
+            font-size: $spacer;
+          }
+        }
+
+        &:hover {
+          @include hover-box;
+        }
+        &:hover .browse-box-title2 {
+          background-color: rgba(0, 13, 255, 0.06);
+          border-radius: $spacer;
+          padding: $spacer $spacer * 4;
+          // left: 0;
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}

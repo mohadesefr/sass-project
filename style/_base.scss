@@ -1,0 +1,27 @@
+html,
+body {
+  font-family: $font_family;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+h2 {
+  color: $text_main_color;
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: 4vw;
+
+  @media (max-width:768px) {
+    font-size: $spacer * 3;
+    
+  }
+}
+
+p {
+  color: $text_light_color;
+ 
+}
